@@ -1,5 +1,5 @@
 class UiController < ApplicationController
-  layout: 'application'
+  layout 'application'
 
   def index; end
 end
