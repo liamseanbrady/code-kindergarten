@@ -7,12 +7,21 @@
         %select.form-control
           %option(value="") Alphabetical
           %option(value="") Most report cards
+      .form-group
+        %select.form-control
+          %option(value="") Alphabetical
+          %option(value="") Most report cards
+      .form-group
+        %select.form-control
+          %option(value="") Alphabetical
+          %option(value="") Most report cards
       %input.btn.btn-primary(type="submit" value="Sort")
 
 .row
   - 4.times do
     .col-md-3
-      .collection-box
+      .report-card-box
         %h4 
           %a TDD in Ruby
-        %p.collection-box_item_number #{(1..10).to_a.sample} Items
+        %p This is a very nice report card
+        %p Grade: #{%w(A B C D).sample}
