@@ -1,0 +1,18 @@
+.row.page-header
+  .col-md-5
+    %h2 TDD in Ruby Collection
+  .col-md-7
+    %form.form-inline.filter-form
+      .form-group
+        %select.form-control
+          %option(value="") Alphabetical
+          %option(value="") Most report cards
+      %input.btn.btn-primary(type="submit" value="Sort")
+
+.row
+  - 4.times do
+    .col-md-3
+      .collection-box
+        %h4 
+          %a TDD in Ruby
+        %p.collection-box_item_number #{(1..10).to_a.sample} Items

@@ -13,3 +13,62 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ 
+ $light-grey: #DDDDDD;
+ $medium-grey: darken($light-grey, 25);
+
+// Overrides to Bootstrap classes
+
+.page-header {
+  border-bottom: none;
+}
+
+// Custom styles
+
+// View all collections page
+
+.collection-box {
+  border: 2px solid $light-grey;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  padding: 10px;
+  #{&}_item_number {
+    color: $medium-grey;
+    font-size: 1.6em;
+  }
+}
+
+// Popular report cards page
+
+.report-card-box {
+  border: 2px solid $light-grey;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  padding: 10px;
+  .glyphicon {
+    cursor: pointer;
+    font-size: 1.4em;
+    color: $light-grey;
+    &:hover, &:active {
+      color: inherit;
+    }
+  }
+}
+
+.filter-form {
+  margin-top: 20px;
+}
+
+// Landing page
+
+.landing-image {
+  margin-top: 30px;
+  padding-left: 30%;
+  width: 70%;
+}
+
+.landing-button {
+  margin-top: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

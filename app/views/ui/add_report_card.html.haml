@@ -1,0 +1,27 @@
+%h4 Add Report Card
+
+.row
+  %form.col-md-6
+    .form-group
+      %label.control-label Title
+      %input.form-control(type="text")
+    .form-group
+      %label.control-label Description
+      %input.form-control(type="textarea")
+    .form-group
+      %label.control-label Collection
+      %select.form-control
+        %option TDD in Ruby
+        %option Functional Programming in Haskell
+    .form-group
+      %label.control-label Session length
+      %input(type="number" min="5" max="60" step="1" value="5") minutes
+    .form-group
+      %label.control-label Grade
+      - %w(A B C D).each do |letter|
+        %input(type="radio") #{letter}
+    .form-group
+      %label.control-label Visbility
+      %input(type="radio") Private
+      %input(type="radio") Public
+    %input.btn.btn-primary(type="submit" value="Add New Report Card")
