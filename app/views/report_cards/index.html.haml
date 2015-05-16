@@ -1,0 +1,29 @@
+.row.page-header
+  .col-md-5
+    %h2 Popular Report Cards
+  .col-md-7
+    %form.form-inline.filter-form
+      .form-group
+        %select.form-control
+          %option(value="All") All
+          %option(value="Ruby") Ruby
+          %option(value="Javascript") Javascript
+      .form-group
+        %select.form-control
+          %option(value="") Popular
+          %option(value="") Most recent
+          %option(value="") Oldest
+      %input.btn.btn-primary(type="submit" value="Filter")
+
+.row
+  - @report_cards.each do |report_card|
+    .col-md-3
+      .report-card-box.clearfix
+        %h4 
+          %a report_card.title
+        %p report_card.description
+        %p Grade: #{report_card.grade}
+        %p 
+          by
+          %a user_one
+        %span.glyphicon.glyphicon-heart.pull-right
