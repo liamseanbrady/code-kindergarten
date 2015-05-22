@@ -1,0 +1,3 @@
+Fabricator(:like) do
+  
+end
