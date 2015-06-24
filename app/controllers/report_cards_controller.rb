@@ -1,5 +1,8 @@
 class ReportCardsController < ApplicationController
   def index
-    @report_cards = ReportCard.popular
+    @categories = Category.all
+    category = params['type'] || 'All'
+    filter = params['filter'] || ''
+    @report_cards = ReportCard.filter(category, filter.to_sym)
   end
 end
