@@ -1,0 +1,30 @@
+.row.page-header
+  .col-md-5
+    %h2 Popular Report Cards
+  .col-md-7
+    .form-inline.filter-form
+      =form_tag home_path, method: 'get' do
+        .form-group
+          %select.form-control{:name => "type"}
+            %option(value="All") All
+            - @categories.each do |category|
+              %option(value="#{category.name}") #{category.name}
+        .form-group
+          %select.form-control{:name => "filter"}
+            %option(value="popular") Popular
+            %option(value="recent") Most recent
+            %option(value="oldest") Oldest
+        %input.btn.btn-primary(type="submit" value="Filter")
+
+.row
+  - @report_cards.each do |report_card|
+    .col-md-3
+      .report-card-box.clearfix
+        %h4 
+          %a= report_card.title
+        %p= report_card.description
+        %p Grade: #{report_card.grade}
+        %p 
+          by
+          %a user_one
+        %span.glyphicon.glyphicon-heart.pull-right
